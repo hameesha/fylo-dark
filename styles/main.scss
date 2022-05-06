@@ -2,15 +2,91 @@
 
 //mixins
 
-@mixin flex($justify, $align) {
+@mixin flex($justify, $align, $direction: "row") {
   display: flex;
   align-items: $align;
   justify-content: $justify;
+  flex-direction: $direction;
 }
-
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.container {
+  width: 90%;
+  max-width: 1440px;
+  height: auto;
+  margin: 0 auto;
+}
+
+header {
+  background-color: $dark-blue-intro-email-signup-background;
+  color: $white;
+  background-image: url("../images/bg-curvy-desktop.svg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center bottom;
+
+  nav {
+    @include flex(space-between, center , );
+    margin-bottom: 4em;
+    padding-top: 4rem;
+    .nav-brand {
+      @include flex(center, center, );
+    }
+    .nav-bar{
+      @include flex(space-between, center, );
+      padding: 0;
+      .nav-item {
+        margin-left: 4em;
+      }
+    }
+  }
+
+  .intro-section {
+    text-align: center;
+    padding-bottom: 4em;
+    .image {
+      img{
+        max-width: 100%;
+        height: auto;
+      }  
+    }
+    h1 {
+      margin-bottom: 1.1em;
+    }
+
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    button {
+      margin-bottom: 1em;
+    }
+  }
+
+}
+
